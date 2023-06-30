@@ -1,19 +1,31 @@
 
-const btnAgregar = document.querySelector('[data-form-btn]');
+const btnAgregar = document.querySelector( '[data-form-btn]' );
 
-const createTask = (evento) => {
-  evento.preventDefault();
-  const inputTarea = document.querySelector('[data-form-input]');
-    
-    if( inputTarea.value == ''){
-        alert('Ingrese una Tarea por Realizar')
+const createTask = ( evento ) => {
+    evento.preventDefault();
+    const inputTarea = document.querySelector( '[data-form-input]' );
+    const value = inputTarea.value;
+
+    const task = document.createElement( 'li' );
+    task.classList.add( 'card' )
+    const list = document.querySelector( '[data-list]' );
+
+    if(inputTarea.value == ''){
+        alert( "No se puede agregar una tarea vacia" );
+        //return false;
     }else{
-        let lista = document.createElement('li');
-        let listado = document.createElement('ul')
-        lista.textContent = inputTarea.value;
-        inputTarea.value = '';
-    }
+        const content = `
+        <div>
+            <i class="far fa-check-square icon"></i>
+            <span class="task">${ value }</span>
+        </div>
+        <i class="fas fa-trash-alt trashIcon icon"></i>
+    `
+    task.innerHTML = content;
+    list.appendChild( task ); 
+    inputTarea.value = '';
+    }   
 };
 
 //Arrow functions o funciones anonimas
-btnAgregar.addEventListener('click', createTask);
+btnAgregar.addEventListener( 'click', createTask );
