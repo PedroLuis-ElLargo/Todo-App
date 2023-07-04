@@ -122,11 +122,18 @@ form {
 }
 
 @media screen and (max-width: 768px) {
+
+  .mainCard{
+    width: 65vw;
+  }
   .contentForm{
     display: flex;
     flex-wrap: wrap;
     max-height: calc((100vh / 2));
     overflow-y: auto;
     justify-content: center;
+  }
+  .inputForm{
+    width: 85%;
   }
 }
