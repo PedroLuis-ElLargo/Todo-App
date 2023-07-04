@@ -96,6 +96,10 @@ form {
   padding: 10px;
 }
 
+span{
+  color: #fff;
+  font-size: 1.2rem;
+}
 .icon {
   cursor: pointer;
 }
