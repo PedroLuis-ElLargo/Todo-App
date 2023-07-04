@@ -7,9 +7,7 @@
 
 main {
   background-image: linear-gradient(
-    109.6deg,
-    rgba(62, 161, 219, 1) 11.2%,
-    rgba(93, 52, 236, 1) 100.2%
+    109.6deg, rgba(67, 36, 212) 11.2%, rgb(50, 27, 179) 50.1%, rgb(34, 18, 145) 55.1%
   );
   width: 100vw;
   height: 100vh;
@@ -29,18 +27,15 @@ form {
 .mainCard {
   width: 40vw;
   border-radius: 25px;
-  background-color: #fff;
+  background-color: #00004d80;
   padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-  font-family: 'Dosis', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin-bottom: 15px;
+.contentFormPrincipal{
+  margin-top: 20px;
 }
-
 .inputForm {
   border: none;
   padding: 10px;
@@ -124,4 +119,14 @@ form {
 
 .noTasks {
   font-size: 48px;
+}
+
+@media screen and (max-width: 768px) {
+  .contentForm{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: calc((100vh / 2));
+    overflow-y: auto;
+    justify-content: center;
+  }
 }
